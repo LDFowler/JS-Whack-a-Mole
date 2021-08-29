@@ -1,0 +1,170 @@
+html {
+    border: 3px solid #010124;
+    background-image: url('background (2).png');
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.score {
+    font-size: 150px;
+    color: #010124;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.game {
+    width: 600px;
+    height: 400px;
+    display:flex;
+    flex-wrap:wrap;
+    margin: 0 auto;
+    
+}
+
+.hole{
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hole:after{
+    display:block;
+    background: url(dirt.png) bottom center no-repeat;
+    background-size:contain;
+    content: '';
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+}
+
+.mole {
+    background: url('yoda1.png') bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.hole.up .mole{
+    top:0;
+}
+
+button{
+ position: absolute;
+ bottom: 10px;
+ left: 50%;
+ transform: translate(-50%, 0);
+ background: #010124;
+ color: white;
+ padding: 20px 50px;
+ border-radius: 5px;
+ z-index: 200;
+ cursor: pointer;
+ border: none;
+ outline: none;
+}
+
+@media (min-width: 667px) and (max-width: 1024px){
+    
+    h1 {
+        display: none;
+    }
+    .score {
+    color: black;
+    padding: 0 12px;
+    line-height: 1;
+    border-radius: 16px;
+    color: black;
+    font-size: 70px;
+    margin-left: 20px;
+}
+
+    .hole.up .mole{
+        top:17px;
+    }
+}
+
+@media (max-width: 667px){
+
+    .game {
+        width: 667px;
+        height: 300px;
+        display:flex;
+        flex-wrap:wrap;
+        margin: 0 auto;
+    }
+
+    .score{
+        width:35px;
+        font-size: 15px;
+        height: 40px;
+        color: #fff;
+        background-color: black;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+        padding: 5px;
+        }
+
+        button{
+            margin: 10px 10px 10px 10px;
+            height: 40px;
+            width: 75px;
+            font-size: 15px;
+        }
+
+    .hole:after{
+        display:block;
+        background: url(dirt.png) bottom center no-repeat;
+        background-size:contain;
+        content: '';
+        max-width: 70%;
+        height: 60px;
+        position: absolute;
+        z-index: 2;
+        bottom: -30px;
+    }
+
+    .mole {
+        background: url('yoda1.png') bottom center no-repeat;
+        background-size: 60%;
+        position: absolute;
+        top: 100%;
+        max-width: 70%;
+        height: 70%;
+        transition: all 0.4s;
+    }
+
+    .hole.up .mole{
+        top:50px;
+    }
+}
